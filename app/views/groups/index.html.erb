@@ -1,7 +1,7 @@
 <section class="bg-slate-100 flex flex-col min-h-full">
   <div class="text-center bg-white shadow-md text-text-color">
     <span>
-      Total Spendings $<%= @groups.sum { |group| group.total_amount.to_i }%>
+      Total Spendings $<%= @groups.sum { |group| group.total_amount || 0 }%>
     </span>
   </div>
   <%if @groups.empty?%>
