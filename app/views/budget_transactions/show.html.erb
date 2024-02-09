@@ -1,0 +1,19 @@
+<section class="p-2 bg-slate-100 min-h-full flex flex-col">
+  <article class="bg-white p-2 flex flex-col gap-2">
+    <div class="flex gap-2 items-center border-b py-2">
+      <%= image_tag(@group.icon)%>
+      <p><%= @group.name%></p>
+    </div>
+    <div class="flex gap-2 flex-col border-b py-2">
+      <p>Transaction: <%= @budget_transaction.name %></p>
+      <span class="text-xs text-text-color"><%= @budget_transaction.created_at.strftime("%d %B %Y")%> At <%= @budget_transaction.created_at.in_time_zone.strftime("%I:%M %p") %></span>
+    </div>
+    <div class="flex justify-between items-center py-2">
+      <p>TOTAL PAYMENT</p>
+      <span>$<%= @budget_transaction.amount %></span>
+    </div>
+  </article>
+  <div class="bg-red-600 p-2 mt-auto">
+    <%= button_to "Delete Transaction", group_budget_transaction_path(@group, @budget_transaction), method: :delete, class: "inline-block w-full px-5 py-3 text-base font-medium text-center text-white focus:outline-none border border-white"%>
+  </div>
+</section>
