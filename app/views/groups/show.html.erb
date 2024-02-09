@@ -1,0 +1,38 @@
+<section class="border min-h-full bg-slate-100 flex flex-col">
+  <div class="text-center bg-white shadow-md text-text-color">
+    <span>
+      <% if @group.group_transactions.empty? %>
+        Total spendings $0
+      <%else%>
+        Total spendings $<%= @group.group_transactions.sum { |gt| gt.budget_transaction.amount } %>
+      <%end%>
+    </span>
+  </div>
+  <ul class="p-3 flex flex-col gap-3">
+    <% if @group.group_transactions.empty? %>
+      <h1>No transactions yet<h1>
+    <%else%>
+      <% @group.group_transactions.each do |group_transaction| %>
+        <%= link_to group_budget_transaction_path(@group, group_transaction.budget_transaction) do%>
+          <li class="flex items-center justify-between border p-2 bg-white">
+            <div>
+              <p><%= group_transaction.budget_transaction.name%></p>
+              <span class="text-xs text-text-colo"><%= group_transaction.created_at.strftime("%d %B %Y") %></span>
+            </div>
+            <div>
+              <span>$<%= group_transaction.budget_transaction.amount%></span>
+            </div>
+          </li>
+        <%end%>
+      <%end%>
+    <%end%>
+  </ul>
+  <div class="mt-auto">
+    <div class="bg-second-color p-2">
+      <%= link_to "Add Transaction", new_group_budget_transaction_path(@group), class: "inline-block w-full px-5 py-3 text-base font-medium text-center text-white focus:outline-none border border-white"%>
+    </div>
+    <div class="bg-red-600 p-2">
+      <%= button_to "Delete Category", group_path(@group), method: :delete, class: "inline-block w-full px-5 py-3 text-base font-medium text-center text-white focus:outline-none border border-white"%>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+<section class="p-2">
+  <%= form_with(model: [ @group, @budget_transaction ], url: group_budget_transactions_path(@group), local: true) do |f|%>
+    <div class="flex flex-col gap-3" >
+      <div>
+        <%= f.text_field :name, autofocus: true, placeholder: "Transaction name", class:"w-full border-b border-0 ring-0 border-slate-300 focus:border-gray-600 focus:border-b-2"%>
+      </div>
+      <div>
+        <%= f.number_field :amount, min: 0, autofocus: true, placeholder: "Amount", class:"w-full border-b border-0 ring-0 border-slate-300 focus:border-gray-600 focus:border-b-2"%>
+      </div>
+      <%unless @groups.length < 2%>
+        <p class="text-green-500 font-semibold">Add to your other categories</p>
+        <% @groups.each do |group| %>
+          <% unless group.id == @group.id %>
+            <div>
+              <%= check_box_tag 'group_ids[]', group.id %>
+              <%= label_tag "group_ids_#{group.id}", group.name %>
+            </div>
+          <% end %>
+        <% end %>
+      <%end%>
+      <div>
+        <%= f.submit "Create", class:"w-full px-3 py-2.5 text-md font-medium text-white bg-second-color focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center"%>
+      </div>
+    </div>
+  <%end%>
+</section>
