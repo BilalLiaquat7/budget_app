@@ -17,7 +17,7 @@ services:
         fromDatabase:
           name: budget_app_test
           property: connectionString
-      - key: RAILS_MASTER_KEY
+      - key: 586867a5c58754ff8635a1279c999269
         sync: false
       - key: WEB_CONCURRENCY
         value: 2 # sensible default
