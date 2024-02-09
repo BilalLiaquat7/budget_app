@@ -98,13 +98,13 @@ Rails.application.configure do
   # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
 
-config.action_mailer.smtp_settings = {
-  address:              '<email-server>',
-  port:                 '<port>',
-  domain:               '<your-domain>',
-  user_name:            Rails.application.credentials.dig(:email, :user),
-  password:             Rails.application.credentials.dig(:email, :password),
-  authentication:       :plain,
-  tls:                  true,
-  enable_starttls_auto: true
-}
+# config.action_mailer.smtp_settings = {
+#   address:              '<email-server>',
+#   port:                 '<port>',
+#   domain:               '<your-domain>',
+#   user_name:            Rails.application.credentials.dig(:email, :user),
+#   password:             Rails.application.credentials.dig(:email, :password),
+#   authentication:       :plain,
+#   tls:                  true,
+#   enable_starttls_auto: true
+# }
