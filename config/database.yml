@@ -22,6 +22,7 @@ default: &default
 development:
   <<: *default
   database: budget_app_development
+  secret_key_base: 753a81dc5d563bef223473e4db62ecf6d49cbc79175c6bfb07df8d7ac6b8aed852c8984d022e9e9ec7495b59ebeaad7b281b57f00ed372242cf508bb97035840
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -56,6 +57,7 @@ development:
 test:
   <<: *default
   database: budget_app_test
+  secret_key_base: 753a81dc5d563bef223473e4db62ecf6d49cbc79175c6bfb07df8d7ac6b8aed852c8984d022e9e9ec7495b59ebeaad7b281b57f00ed372242cf508bb97035840
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -82,3 +84,4 @@ production:
   database: budget_app_production
   username: budget_app
   password: <%= ENV["BUDGET_APP_DATABASE_PASSWORD"] %>
+  secret_key_base: 753a81dc5d563bef223473e4db62ecf6d49cbc79175c6bfb07df8d7ac6b8aed852c8984d022e9e9ec7495b59ebeaad7b281b57f00ed372242cf508bb97035840
