@@ -9,8 +9,12 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.includes(group_transactions: :budget_transaction).find_by_id(params[:id])
-    @header_title = 'Category'
+    if Group.find_by_id(params[:id]).nil?
+      redirect_to groups_path
+    else
+      @group = Group.includes(group_transactions: :budget_transaction).find_by_id(params[:id])
+      @header_title = 'Category'
+    end
   end
 
   def new

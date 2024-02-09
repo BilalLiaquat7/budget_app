@@ -2,7 +2,11 @@ class BudgetTransactionsController < ApplicationController
   def show
     @budget_transaction = BudgetTransaction.find_by_id(params[:id])
     @group = Group.find_by_id(params[:group_id])
-    @header_title = 'Transaction'
+    if @budget_transaction.nil?
+      redirect_to group_path(@group)
+    else
+      @header_title = 'Transaction'
+    end
   end
 
   def new

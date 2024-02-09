@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe GroupTransaction, type: :model do
   before(:each) do
-    @user = User.create(name: 'bilal', email: 'bilal@gmail.com', password: '123456', password_confirmation: '123456',
+    @user = User.create(name: 'hamid', email: 'hdm@gmail.com', password: '123456', password_confirmation: '123456',
                         id: 1)
-    @budget_transacton = BudgetTransaction.create(name: 'test', amount: 123, author_id: @user.id)
+    @budget_transacton = BudgetTransaction.create(name: 'test', amount: 23, author_id: @user.id)
     @group = Group.create(author_id: @user.id, name: 'test', icon: 'http//:test.com')
     @group_transaction = GroupTransaction.create(budget_transaction: @budget_transacton, group: @group)
   end
