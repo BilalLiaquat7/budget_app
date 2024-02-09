@@ -61,8 +61,8 @@
 
 ### Live Link <a name="live_link"></a>
 
-<a href="https://budgetbuddy-0lst.onrender.com">See live project</a><br/>
-<a href="https://www.loom.com/share/d0c5e6972d66461e97c050670ce30db5?sid=1090e108-b736-44cc-9798-dacf5c9c68bc">See Project Presentation Video</a>
+<a href="">See live project</a><br/>
+<a href="">See Project Presentation Video</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -93,10 +93,10 @@ Install this project with:
 
 ## 👤 Author <a name="authors"></a>
 
-🧔 **Hamid**
+🧔 **Bilal Liaquat**
 
-- GitHub: [@bilalliaquat7](https://github.com/hamidazim321)
-- Twitter: [@hamidazim321](https://twitter.com/hamidazim321)
+- GitHub: [@bilalliaquat7](https://github.com/bilalliaquat7)
+- Twitter: [@MBilal_pro](https://twitter.com/MBilal_pro)
 - LinkedIn: [muhammad-bilal-liaquat-87863390](https://www.linkedin.com/in/muhammad-bilal-liaquat-87863390/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
