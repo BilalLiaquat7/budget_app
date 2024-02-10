@@ -61,8 +61,8 @@
 
 ### Live Link <a name="live_link"></a>
 
-<a href="">See live project</a><br/>
-<a href="">See Project Presentation Video</a>
+<a href="https://budgetbuddy-0lst.onrender.com/">See live project</a><br/>
+<a href="https://www.loom.com/share/44581cd8adc04a9d8597e3a3a80ad90b?sid=6d07b3fe-4163-4c9f-aa98-54ba69efecb9">See Project Presentation Video</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
