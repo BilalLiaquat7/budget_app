@@ -1,0 +1,32 @@
+<section class="bg-slate-100 flex flex-col min-h-full">
+  <div class="text-center bg-white shadow-md text-text-color">
+    <span>
+      Total Spendings $<%= @groups.sum { |group| group.total_amount || 0 }%>
+    </span>
+  </div>
+  <%if @groups.empty?%>
+    <h1>No categories yet. Make a new category</h1>
+  <%else%>
+    <ul class="p-3 flex flex-col gap-3">
+      <% @groups.each do |group|%>
+        <%= link_to group_path(group) do %>
+          <li class="flex items-center gap-2 border p-2 bg-white">
+            <%= image_tag group.icon%>
+            <div class="flex justify-between w-full">
+              <div>
+                <p><%= group.name%></p>
+                <span class="text-xs text-text-color"><%= group.created_at.strftime("%d %B %Y")%></span>
+              </div>
+              <div>
+                <span>$<%= group.total_amount || 0%></span>
+              </div>
+            </div>
+          </li>
+        <%end%>
+      <%end%>
+    </ul>
+  <%end%>
+  <div class="mt-auto p-2 bg-second-color">
+    <%= link_to "Add new category", new_group_path, class: "inline-block w-full px-5 py-3 text-base font-medium text-center text-white focus:outline-none border border-white"%>
+  </div>
+</section>

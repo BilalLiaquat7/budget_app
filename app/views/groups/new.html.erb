@@ -1,0 +1,45 @@
+<section class="p-2">
+  <%= form_with(model: @group, local: true) do |f|%>
+    <div class="flex flex-col gap-3" >
+      <div>
+        <%= f.text_field :name, autofocus: true, autocomplete: "category name", placeholder: "category name", class:"w-full border-b border-0 ring-0 border-slate-300 focus:border-gray-600 focus:border-b-2"%>
+      </div>
+      <div class="flex gap-3 flex-col">
+        <p>Choose an Icon:</p>
+        <div class="flex items-center gap-3">
+          <%= f.radio_button :icon, "https://img.icons8.com/doodle/48/stack-of-money.png", id: "bills" %>
+          <%= label :icon, for: "bills" do %>
+            <%= image_tag("https://img.icons8.com/doodle/48/stack-of-money.png") %>
+          <% end %>
+        </div>
+        <div class="flex items-center gap-3">
+          <%= f.radio_button :icon, "https://img.icons8.com/color/48/funimation.png", id: "entertainment" %>
+          <%= label :icon, for: "entertainment" do %>
+            <%= image_tag("https://img.icons8.com/color/48/funimation.png") %>
+          <% end %>
+        </div>
+        <div class="flex items-center gap-3">
+          <%= f.radio_button :icon, "https://img.icons8.com/color/48/money-box--v1.png", id: "savings" %>
+          <%= label :icon, for: "savings" do %>
+            <%= image_tag("https://img.icons8.com/color/48/money-box--v1.png") %>
+          <% end %>
+        </div>
+        <div class="flex items-center gap-3">
+          <%= f.radio_button :icon, "https://img.icons8.com/fluency/48/hamburger.png", id: "food" %>
+          <%= label :icon, for: "food" do %>
+            <%= image_tag("https://img.icons8.com/fluency/48/hamburger.png") %>
+          <% end %>
+        </div>
+        <div class="flex items-center gap-3">
+          <%= f.radio_button :icon, "https://img.icons8.com/fluency/48/car--v1.png", id: "car" %>
+          <%= label :icon, for: "car" do %>
+            <%= image_tag("https://img.icons8.com/fluency/48/car--v1.png") %>
+          <% end %>
+        </div>
+      </div>
+      <div>
+        <%= f.submit "Save", class:"w-full px-3 py-2.5 text-md font-medium text-white bg-second-color focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center"%>
+      </div>
+    </div>
+  <%end%>
+</section>
